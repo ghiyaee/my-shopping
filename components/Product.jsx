@@ -2,7 +2,8 @@ import Image from 'next/image';
 const Product = ({ product }) => {
   return (
     <div className="container m-auto min-h-screen flex flex-col gap-4 justify-center ">
-      <div className="  flex gap-8 justify-around flex-wrap items-center shadow shadow-cyan-800 rounded-lg p-6 mb-6">
+      <div className="  flex gap-8 justify-around flex-wrap items-center
+       shadow shadow-cyan-800 rounded-lg p-6 mb-6">
         <div className="flex flex-wrap justify-center gap-8 ">
           <Image
             width={300}
@@ -19,8 +20,8 @@ const Product = ({ product }) => {
             className=""
           />
         </div>
-        <div className="p-10 font-bold shadow-xl shadow-cyan-800 rounded-lg  ">
-          <div>مشخصات :</div>
+        <div className="p-10 font-bold shadow-xl shadow-cyan-800 rounded-lg sm:text-2xl ">
+          <div>مشخصات گوشی:</div>
           <div>نام محصول :&nbsp;{product.title}</div>
           <div>قیمت :&nbsp;{product.price} تومان</div>
           <div >
