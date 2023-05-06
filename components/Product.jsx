@@ -3,17 +3,17 @@ const Product = ({ product }) => {
   return (
     <div className="container m-auto min-h-screen flex flex-col gap-4 justify-center ">
       <div className="  flex gap-4 justify-around flex-wrap items-center shadow shadow-cyan-800 rounded-lg p-6 mb-6">
-        <div className="flex flex-wrap justify-center gap-4 ">
+        <div className="flex flex-wrap justify-center gap-6 ">
           <Image
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             src={`/images${product.image[0]}`}
             alt={product.title}
             className=""
           />
           <Image
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             src={`/images${product.image[1]}`}
             alt={product.title}
             className=""
