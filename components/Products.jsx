@@ -2,6 +2,7 @@ import { data } from '@/data/data';
 import Image from 'next/image';
 import Link from 'next/link';
 const Products = () => {
+ 
   return (
     <div className="flex justify-center flex-wrap gap-6">
       {data.products.map((product) => (
@@ -23,7 +24,7 @@ const Products = () => {
             <h2>{product.title}</h2>
             <div>قیمت :{product.price} تومان</div>
             <Link href={`/product/${product.id}`}>
-              <button className="primery-button w-full">بیشتر...</button>
+              <button className="primery-button w-full" >بیشتر...</button>
             </Link>
           </div>
         </div>

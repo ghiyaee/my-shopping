@@ -20,3 +20,8 @@ body {
 @apply p-4 bg-blue-400 mt-4 text-xl font-bold hover:bg-blue-600
     transition-all rounded-md hover:text-white duration-700
 }
+
+.item-add{
+@apply ml-2 bg-red-500 rounded-full flex 
+            items-center justify-center w-8 h-8 text-center text-white
+}
