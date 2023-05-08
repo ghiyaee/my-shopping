@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { data } from '@/data/data';
 const Slider = () => {
-  const { image } = data.products[0]
+  const { image } = data.products[1]
   console.log(image[0]);
   const [state, setState] = useState([]);
   let [color1, setColor1] = useState('bg-blue-500');
@@ -75,35 +75,37 @@ const Slider = () => {
     };
   }, [counter]);
   return (
-    <div className="container mx-auto rounded-lg bg-blue-300 flex justify-center items-center h-[35rem]  ">
-      {state[counter] ? (
-        <div className="relative ">
-          <Image
-            width={400}
-            height={400}
-            src={`/images${state[counter]}`}
-            alt={'imgSlider'}
-            style={{objectFit:"cover "}}
-            className={`rounded-lg  transition-all duration-1000 ease-in-out animate-menu  `}
-          />
-          <div>
-            <span onClick={handelItemPriv} className="priv">
-              {'<'}
-            </span>
-            <span onClick={handelItemNext} className="next">
-              {'>'}
-            </span>
+    <>
+      <div className="w-full rounded-lg bg-blue-300 flex justify-center items-center h-[35rem]  ">
+        {state[counter] ? (
+          <div className="relative">
+            <Image
+              width={500}
+              height={400}
+              src={`/images${state[counter]}`}
+              alt={'imgSlider'}
+              style={{ objectFit: 'cover ' }}
+              className={`transition duration-700    `}
+            />
+            <div>
+              <span onClick={handelItemPriv} className="priv">
+                {'<'}
+              </span>
+              <span onClick={handelItemNext} className="next">
+                {'>'}
+              </span>
+            </div>
           </div>
-          <div className="flex justify-center gap-2 mt-3 ">
-            <span className={`w-4 h-4 ${color1} rounded-full `}></span>
-            <span className={`w-4 h-4 ${color2} rounded-full `}></span>
-            <span className={`w-4 h-4 ${color3} rounded-full `}></span>
-          </div>
-        </div>
-      ) : (
-        ''
-      )}
-    </div>
+        ) : (
+          ''
+        )}
+      </div>
+      <div className="flex justify-center gap-2 mb-8 mt-4 ">
+        <span className={`w-4 h-4 ${color1} rounded-full `}></span>
+        <span className={`w-4 h-4 ${color2} rounded-full `}></span>
+        <span className={`w-4 h-4 ${color3} rounded-full `}></span>
+      </div>
+    </>
   );
 };
 

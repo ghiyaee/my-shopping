@@ -17,7 +17,7 @@ export const data = {
       id: 2,
       title: 'PIXEL',
       price: 1000,
-      image: ['/pixel7.png', '/pixel7b.png'],
+      image: ['/pixel7.png', '/pixel7b.png', '/app14.png'],
       details: {
         camera: '14MP',
         cameraSelfie: '8MP',
