@@ -25,3 +25,11 @@ body {
 @apply ml-2 bg-red-500 rounded-full flex 
             items-center justify-center w-8 h-8 text-center text-white
 }
+.priv{
+@apply absolute bottom-[50%] translate-y-[50%]
+ text-yellow-300 text-4xl m-4 cursor-pointer opacity-75
+}
+.next{
+@apply absolute left-0 bottom-[50%]  translate-y-[50%] 
+ text-yellow-300 text-4xl m-4 cursor-pointer opacity-75
+}

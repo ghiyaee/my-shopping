@@ -1,12 +1,15 @@
 import Image from 'next/image';
 import { useContext } from 'react';
-import {MyContext} from "../utils/context"
+import { MyContext } from "../utils/context"
+import { useRouter } from 'next/navigation';
 const Product = ({ product }) => {
+  const router = useRouter()
   const {state, dispatch}=useContext(MyContext)
   const handleAddItem = () => {
     const existItem = state.cart.cartItems.find(f => f.id === product.id)
     const quantity=existItem ? existItem.quantity + 1 : 1
-   dispatch({type:'ADD_NEW_ITEM' , payload:{...product,quantity}})
+    dispatch({ type: 'ADD_NEW_ITEM', payload: { ...product, quantity } })
+    router.push('/card')
    };
   return (
     <div className="container m-auto min-h-screen flex flex-col gap-4 justify-center ">

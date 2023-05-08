@@ -4,7 +4,7 @@ export const data = {
       id: 1,
       title: 'APPEL',
       price: 1000,
-      image: ['/app14.png', '/app14b.png'],
+      image: ['/app14.png', '/app14b.png', '/app14.png'],
       details: {
         camera: '14MP',
         cameraSelfie: '8MP',
