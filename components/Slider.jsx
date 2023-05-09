@@ -115,7 +115,7 @@ const Slider = () => {
           ''
         )}
       </div>
-      <div className="flex justify-center gap-2 mb-8 mt-4 ">
+      <div className="hidden flex justify-center gap-2 mb-8 mt-4 ">
         <span className={`w-4 h-4 ${color1} rounded-full `}></span>
         <span className={`w-4 h-4 ${color2} rounded-full `}></span>
         <span className={`w-4 h-4 ${color3} rounded-full `}></span>
