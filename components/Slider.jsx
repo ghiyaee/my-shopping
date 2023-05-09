@@ -8,7 +8,9 @@ const Slider = () => {
   let [color1, setColor1] = useState('bg-blue-500');
   let [color2, setColor2] = useState('bg-blue-100');
   let [color3, setColor3] = useState('bg-blue-100');
+  let [color4, setColor4] = useState('bg-blue-100');
   let [counter, setCounter] = useState(0);
+
   const handelItemNext = () => {
     if (counter < state.length - 1) {
       setCounter((prevConter) => prevConter + 1);
@@ -18,12 +20,17 @@ const Slider = () => {
       } else if (counter === 1) {
         setColor3('bg-blue-500');
         setColor2('bg-blue-100');
+      }if (counter === 2) {
+        setColor4('bg-blue-500');
+        setColor3('bg-blue-100');
       }
+      
     } else {
       setCounter(0);
       setColor1('bg-blue-500');
       setColor2('bg-blue-100');
       setColor3('bg-blue-100');
+       setColor4('bg-blue-100');
     }
   };
   const handelItemPriv = () => {
@@ -37,13 +44,18 @@ const Slider = () => {
         setColor3('bg-blue-100');
         setColor2('bg-blue-500');
       }
-    } else {
-      setCounter(2);
-      if (counter === 0) {
-        setColor1('bg-blue-100');
+      if (counter === 3) {
+        setColor4('bg-blue-100');
         setColor3('bg-blue-500');
       }
     }
+    else
+    {
+      setCounter(3);
+      setColor1('bg-blue-100');
+        setColor4('bg-blue-500');
+      }
+    
   };
   useEffect(() => {
     
@@ -52,7 +64,7 @@ const Slider = () => {
   },[counter]);
   useEffect(() => {
     const timer = setInterval(() => {
-      if (counter < 2) {
+      if (counter < 3) {
         setCounter((prevConter) => prevConter + 1);
         if (counter === 0) {
           setColor2('bg-blue-500');
@@ -60,12 +72,16 @@ const Slider = () => {
         } else if (counter === 1) {
           setColor3('bg-blue-500');
           setColor2('bg-blue-100');
+        } else if (counter === 2) {
+          setColor4('bg-blue-500');
+          setColor3('bg-blue-100');
         }
       } else {
         setCounter(0);
         setColor1('bg-blue-500');
         setColor2('bg-blue-100');
         setColor3('bg-blue-100');
+        setColor4('bg-blue-100');
       }
     }, 4000);
     return () => {
@@ -74,10 +90,12 @@ const Slider = () => {
   }, [counter]);
   return (
     <>
-      <div className="w-full relative rounded-lg bg-blue-300 shadow-2xl flex justify-center items-center h-[40rem]  ">
+      <div className="w-full relative rounded-lg bg-zinc-500 shadow-2xl flex justify-center items-center h-[40rem]  ">
         {state[counter] ? (
           <>
-            <div className='hidden md:block text-7xl ml-16 '>بهترین برای بهترینها</div>
+            <div className="hidden md:block text-white text-7xl ml-16 ">
+              بهترین برای بهترینها
+            </div>
             <Image
               width={500}
               height={400}
@@ -101,6 +119,7 @@ const Slider = () => {
         <span className={`w-4 h-4 ${color1} rounded-full `}></span>
         <span className={`w-4 h-4 ${color2} rounded-full `}></span>
         <span className={`w-4 h-4 ${color3} rounded-full `}></span>
+        <span className={`w-4 h-4 ${color4} rounded-full `}></span>
       </div>
     </>
   );

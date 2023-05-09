@@ -28,9 +28,9 @@ body {
 }
 .priv {
   @apply md:block absolute top-[50%] right-10
- text-blue-700 text-4xl  p-2 cursor-pointer opacity-75;
+ text-yellow-400 text-4xl  p-2 cursor-pointer opacity-75;
 }
 .next {
   @apply md:block absolute left-10 top-[50%]  p-2
- text-blue-700 text-4xl  cursor-pointer opacity-75;
+ text-yellow-400 text-4xl  cursor-pointer opacity-75;
 }
