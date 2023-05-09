@@ -26,6 +26,9 @@ body {
   @apply ml-2 bg-red-500 rounded-full flex 
             items-center justify-center w-8 h-8 text-center text-white;
 }
+.slider{
+@apply relative rounded-lg bg-zinc-500 shadow-2xl flex justify-center items-center h-[40rem] 
+}
 .priv {
   @apply md:block absolute top-[50%] right-10
  text-yellow-400 text-4xl  p-2 cursor-pointer opacity-75;

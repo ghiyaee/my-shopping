@@ -90,7 +90,7 @@ const Slider = () => {
   }, [counter]);
   return (
     <>
-      <div className="w-full relative rounded-lg bg-zinc-500 shadow-2xl flex justify-center items-center h-[40rem]  ">
+      <div className="slider">
         {state[counter] ? (
           <>
             <div className="hidden md:block text-white text-7xl ml-16 ">
@@ -115,7 +115,7 @@ const Slider = () => {
           ''
         )}
       </div>
-      <div className="hidden flex justify-center gap-2 mb-8 mt-4 ">
+      <div className=" flex justify-center gap-2 mb-8 mt-4 ">
         <span className={`w-4 h-4 ${color1} rounded-full `}></span>
         <span className={`w-4 h-4 ${color2} rounded-full `}></span>
         <span className={`w-4 h-4 ${color3} rounded-full `}></span>

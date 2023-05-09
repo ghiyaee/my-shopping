@@ -5,7 +5,7 @@ import { AiTwotonePhone } from 'react-icons/ai';
 import Link from 'next/link';
 const Footer = () => {
   return (
-    <footer className="h-30 w-full shadow-inner border flex justify-around
+    <footer className="h-30  w-full shadow-inner border flex justify-around
            items-center text-2xl font-bold flex-wrap p-8 gap-4 text-center"
     >
       <div className="mb-4">
