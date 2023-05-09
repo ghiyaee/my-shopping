@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { data } from '@/data/data';
 const Slider = () => {
-  const { image } = data.products[1]
-  console.log(image[0]);
   const [state, setState] = useState([]);
   let [color1, setColor1] = useState('bg-blue-500');
   let [color2, setColor2] = useState('bg-blue-100');
@@ -49,7 +47,7 @@ const Slider = () => {
   };
   useEffect(() => {
     
-      return setState(image);
+      return setState(data.images);
     
   },[counter]);
   useEffect(() => {
@@ -76,26 +74,25 @@ const Slider = () => {
   }, [counter]);
   return (
     <>
-      <div className="w-full rounded-lg bg-blue-300 flex justify-center items-center h-[35rem]  ">
+      <div className="w-full relative rounded-lg bg-blue-300 shadow-2xl flex justify-center items-center h-[40rem]  ">
         {state[counter] ? (
-          <div className="relative">
+          <>
+            <div className='hidden md:block text-7xl ml-16 '>بهترین برای بهترینها</div>
             <Image
               width={500}
               height={400}
               src={`/images${state[counter]}`}
               alt={'imgSlider'}
               style={{ objectFit: 'cover ' }}
-              className={`transition duration-700    `}
+              className={`transition duration-1000 ease-in-out`}
             />
-            <div>
-              <span onClick={handelItemPriv} className="priv">
-                {'<'}
-              </span>
-              <span onClick={handelItemNext} className="next">
-                {'>'}
-              </span>
+            <div onClick={handelItemPriv} className="hidden priv">
+              {'<'}
             </div>
-          </div>
+            <div onClick={handelItemNext} className="hidden next">
+              {'>'}
+            </div>
+          </>
         ) : (
           ''
         )}

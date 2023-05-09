@@ -1,10 +1,11 @@
 export const data = {
+  images: ['/app14.png', '/pixel7.png', '/motorz.png', '/samflip.png'],
   products: [
     {
       id: 1,
       title: 'APPEL',
       price: 1000,
-      image: ['/app14.png', '/app14b.png', '/app14.png'],
+      image: ['/app14.png', '/app14b.png'],
       details: {
         camera: '14MP',
         cameraSelfie: '8MP',

@@ -6,7 +6,7 @@ const Products = () => {
  
   return (
     <>
- 
+      <Slider />
       <div className="flex justify-center flex-wrap gap-6">
         {data.products.map((product) => (
           <div
