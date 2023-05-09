@@ -41,13 +41,20 @@ const Crad = () => {
         </>
       )}
 
-      <div className="w-[20rem] rounded-lg shadow p-10 mt-10 bg-[#f7f2e6] text-xl">
-        <p className='text-center'> فاکتور خرید</p>
+      <div className="w-[25rem] rounded-lg shadow p-10 mt-10 bg-[#f7f2e6] text-2xl">
+        <p className="text-center"> فاکتور خرید</p>
         <div>تعداد :{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</div>
         <div>
-          قیمت :{cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+          قیمت :{cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)} تومان
         </div>
-        <div>مالیات ارزش افزوده : {}</div>
+        <div>
+          مالیات ارزش افزوده :{' '}
+          {cart.cartItems.reduce(
+            (a, c) => a + (c.quantity * c.price * 1) / 100,0)} تومان
+        </div>
+        <div>
+          جمع فاکتور:{cart.cartItems.reduce((a, c) => a +  (c.quantity * c.price * 1) /100 + c.price, 0)} تومان
+        </div>
         <button className="primery-button w-full">تایید سفارش </button>
       </div>
     </div>
