@@ -6,14 +6,11 @@ const Products = () => {
  
   return (
     <>
-      <div className='hidden w-full md:block'>
-        <Slider />
-      </div>
-      <div className="flex justify-center flex-wrap gap-6">
+      <div className="flex justify-center flex-wrap gap-6 my-10 md:p-20">
         {data.products.map((product) => (
           <div
             key={product.id}
-            className="p-8 shadow-xl rounded-lg flex flex-col justify-between items-center "
+            className="p-8 shadow-xl rounded-lg flex flex-col justify-between items-center bg-[#f7f2e6] "
           >
             <Link href={`/product/${product.id}`}>
               <Image

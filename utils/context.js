@@ -1,7 +1,7 @@
 import { createContext, useReducer } from 'react';
 export const MyContext = createContext();
 const initial = {
-  cart: { cartItems: [] },
+  cart:{ cartItems: [] },
 };
 const reducer = (state, action) => {
   switch (action.type) {

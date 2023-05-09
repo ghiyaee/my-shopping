@@ -1,5 +1,5 @@
 export const data = {
-  images: ['/app14.png', '/pixel7.png', '/motorz.png', '/samflip.png'],
+  images: ['/app14.png', '/pixel7.png', '/motorz.png', '/samflipb.png'],
   products: [
     {
       id: 1,

@@ -93,17 +93,19 @@ const Slider = () => {
       <div className="slider">
         {state[counter] ? (
           <>
-            <div className="hidden md:block text-white text-7xl ml-16 ">
-              بهترین برای بهترینها
+            <div className="w-[28rem] h-[28rem]">
+              <Image
+                width={400}
+                height={400}
+                src={`/images${state[counter]}`}
+                alt={'imgSlider'}
+                style={{ objectFit: 'cover ' }}
+                className={`transition duration-1000 ease-in-out`}
+              />
             </div>
-            <Image
-              width={500}
-              height={400}
-              src={`/images${state[counter]}`}
-              alt={'imgSlider'}
-              style={{ objectFit: 'cover ' }}
-              className={`transition duration-1000 ease-in-out`}
-            />
+            <div className="hidden md:block text-yellow-400 text-7xl ml-16 ">
+              بهترین برای بهترین ها
+            </div>
             <div onClick={handelItemPriv} className="hidden priv">
               {'<'}
             </div>

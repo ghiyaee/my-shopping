@@ -9,7 +9,7 @@ const Header = () => {
     return (
       <header
         className="h-14 w-full shadow-xl 
-       flex justify-between items-center font-bold sm:text-2xl sm:h-20 "
+       flex justify-between items-center font-bold sm:text-2xl sm:h-20 sticky top-0 z-50 bg-white "
       >
         <Link href={'/'}>
           <div className="p-2 sm:p-6">فروشگاه من</div>
