@@ -2,7 +2,7 @@ import Crad from '@/components/Crad';
 const Cart = () => {
   return (
     <div>
-      <Crad />
+      <Crad  />
     </div>
   );
 };
