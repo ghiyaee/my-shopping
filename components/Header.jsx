@@ -8,8 +8,8 @@ const Header = () => {
   const {cart}=state
     return (
       <header
-        className="h-12 w-full shadow-xl 
-       flex justify-between items-center font-bold sm:text-2xl sm:h-16 "
+        className="h-14 w-full shadow-xl 
+       flex justify-between items-center font-bold sm:text-2xl sm:h-20 "
       >
         <Link href={'/'}>
           <div className="p-2 sm:p-6">فروشگاه من</div>
@@ -25,7 +25,7 @@ const Header = () => {
               <SlBasket className="sm:text-3xl" />
             </Link>
           </div>
-            <div className='border-l-2 bg-zinc-900 h-8 '></div>
+            <div className='border bg-zinc-900 h-8 ml-2'></div>
           <div className="sm:p-4">حساب کاربری</div>
         </nav>
       </header>
