@@ -3,7 +3,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 function Layout({children}) {
   return (
-      <div >
+      <div className="flex justify-between flex-col min-h-screen">
           <Header/>
           {children}
           <Footer/>

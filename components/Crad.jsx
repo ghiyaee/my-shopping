@@ -6,11 +6,11 @@ const Crad = () => {
   const { state, dispatch } = useContext(MyContext);
   const { cart } = state;
   return (
-    <div className=" flex flex-col justify-center items-center mt-8">
+    <div className=" flex  justify-around items-center flex-wrap mt-0">
       {cart.cartItems.length === 0 ? (
         <h2
-          className="flex justify-center items-center text-3xl 
-        p-16 bg-zinc-500 rounded-lg text-yellow-100 shadow-lg mr-8"
+          className="w-[40rem] flex justify-center items-center text-3xl 
+          p-6 bg-zinc-500 rounded-lg text-yellow-100 shadow-lg mr-0"
         >
           سبد خرید شما خالی است &nbsp;
           <Link className="text-blue-300" href={'/'}>
@@ -23,17 +23,23 @@ const Crad = () => {
             {cart.cartItems.map((i) => (
               <div
                 key={i.id}
-                className="flex items-center rounded-lg shadow p-10 bg-zinc-500 text-yellow-100 text-xl "
+                className=" flex justify-around items-center 
+                rounded-lg shadow p-6 bg-zinc-500 text-yellow-100 text-xl "
               >
-                <Image
-                  src={`/images${i.image[0]}`}
-                  width={100}
-                  height={150}
-                  alt={i.title}
-                />
-                <h2 className="p-6">نام گوشی : {i.title}</h2>
-                <div className="p-6"> قیمیت : {i.price}</div>
-                <div className="p-6"> تعداد : {i.quantity}</div>
+                <div className="flex  items-center ">
+                  <Image
+                    src={`/images${i.image[0]}`}
+                    width={90}
+                    height={150}
+                    alt={i.title}
+                  />
+                 
+                    <h2 className="p-6 w-[10rem]"> {i.title}</h2>
+                    <div className="p-6 w-[10rem]"> قیمیت : {i.price}</div>
+                    <div className="p-6 w-[10rem]"> تعداد : {i.quantity}</div>
+                
+                </div>
+
                 <button className="primery-button">انصراف</button>
               </div>
             ))}
@@ -45,17 +51,26 @@ const Crad = () => {
         <p className="text-center"> فاکتور خرید</p>
         <div>تعداد :{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</div>
         <div>
-          قیمت :{cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)} تومان
+          قیمت :{cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}{' '}
+          تومان
         </div>
         <div>
           مالیات ارزش افزوده :{' '}
           {cart.cartItems.reduce(
-            (a, c) => a + (c.quantity * c.price * 1) / 100,0)} تومان
+            (a, c) => a + (c.quantity * c.price * 1) / 100,
+            0
+          )}{' '}
+          تومان
         </div>
         <div>
-          جمع فاکتور:{cart.cartItems.reduce((a, c) => a +  (c.quantity * c.price * 1) /100 + c.price, 0)} تومان
+          جمع فاکتور:
+          {cart.cartItems.reduce(
+            (a, c) => a + (c.quantity * c.price * 1) / 100 + c.price,
+            0
+          )}{' '}
+          تومان
         </div>
-        <button className="primery-button w-full">تایید سفارش </button>
+        <button className="primery-button w-full">تایید نهایی </button>
       </div>
     </div>
   );

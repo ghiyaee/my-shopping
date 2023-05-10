@@ -6,7 +6,7 @@ const Products = () => {
  
   return (
     <>
-      <div className="flex justify-center flex-wrap gap-8 my-10 md:p-20">
+      <div className="flex justify-center flex-wrap gap-8 my-10 md:p-16  ">
         {data.products.map((product) => (
           <div
             key={product.id}
@@ -19,7 +19,7 @@ const Products = () => {
                 height={230}
                 src={`/images${product.image[0]}`}
                 style={{ objectFit: 'content', height: '230px' }}
-                className="hover:scale-150 duration-700"
+                className=""
               />
             </Link>
             <div className="text-xl font-bold mt-4">
