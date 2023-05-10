@@ -5,6 +5,9 @@ import Link from 'next/link';
 const Crad = () => {
   const { state, dispatch } = useContext(MyContext);
   const { cart } = state;
+  const removeHandle = (item) => {
+    dispatch({ type: 'ERMOVE_ITEM' ,payload:item});
+  }
   return (
     <div className=" flex  justify-around items-center flex-wrap mt-6">
       {cart.cartItems.length === 0 ? (
@@ -20,26 +23,32 @@ const Crad = () => {
       ) : (
         <>
           <div className="flex flex-col gap-6  ">
-            {cart.cartItems.map((i) => (
+            {cart.cartItems.map((item) => (
               <div
-                key={i.id}
+                key={item.id}
                 className=" flex  flex-col items-center md:flex-row
                 rounded-lg shadow p-8 bg-zinc-500 text-yellow-100 text-xl justify-center "
               >
                 <div className="flex items-center text-center flex-col  md:flex-row md:p-0">
                   <Image
-                    src={`/images${i.image[0]}`}
+                    src={`/images${item.image[0]}`}
                     width={90}
                     height={150}
                     alt={i.title}
                   />
-
-                  <h2 className="p-6 w-[10rem]"> {i.title}</h2>
-                  <div className="p-6 w-[10rem]"> قیمت به تومان {i.price}</div>
-                  <div className="p-6 w-[10rem]"> تعداد : {i.quantity}</div>
+                  <h2 className="p-6 w-[10rem]"> {item.title}</h2>
+                  <div className="p-6 w-[10rem]">
+                    {' '}
+                    قیمت به تومان {item.price}
+                  </div>
+                  <div className="p-6 w-[10rem]"> تعداد : {item.quantity}</div>
                 </div>
-
-                <button className="primery-button ">انصراف</button>
+                <button
+                  className="primery-button"
+                  onClick={() => removeHandle(item)}
+                >
+                  انصراف
+                </button>
               </div>
             ))}
           </div>
@@ -60,7 +69,7 @@ const Crad = () => {
           {cart.cartItems.reduce(
             (a, c) => a + (c.quantity * c.price * 1) / 100,
             0
-          )}{' '}
+          )}
           تومان
         </div>
         <div>
@@ -69,7 +78,7 @@ const Crad = () => {
             (a, c) =>
               a + (c.quantity * c.price * 1) / 100 + c.quantity * c.price,
             0
-          )}{' '}
+          )}
           تومان
         </div>
         <button className="primery-button w-full">تایید نهایی </button>

@@ -1,7 +1,7 @@
 import { createContext, useReducer } from 'react';
 export const MyContext = createContext();
 const initial = {
-  cart:{ cartItems: [] },
+  cart: { cartItems: [] },
 };
 const reducer = (state, action) => {
   switch (action.type) {
@@ -15,6 +15,14 @@ const reducer = (state, action) => {
         : [...state.cart.cartItems, newItem];
       return { ...state, cart: { ...state.cart, cartItems } };
     }
+
+    case 'ERMOVE_ITEM': {
+      const newItem = action.payload;
+      const cartItems = state.cart.cartItems.filter((f) => f.id !== newItem.id);
+      return { ...state, cart: { ...state.cart, cartItems } };
+    }
+    default:
+      return state;
   }
 };
 const MyContextProvider = ({ children }) => {
