@@ -10,7 +10,7 @@ const Products = () => {
         {data.products.map((product) => (
           <div
             key={product.id}
-            className="p-8 shadow-xl rounded-lg  flex flex-col  
+            className="p-8 shadow-xl rounded-lg  flex flex-col  gap-6
              bg-zinc-500 text-yellow-300 items-center justify-between" 
           >
             <Link href={`/product/${product.id}`}>
