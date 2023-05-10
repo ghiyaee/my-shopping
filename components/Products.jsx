@@ -10,7 +10,8 @@ const Products = () => {
         {data.products.map((product) => (
           <div
             key={product.id}
-            className="p-8 shadow-xl rounded-lg  flex flex-col justify-between items-center bg-zinc-500 text-yellow-300 "
+            className="p-8 shadow-xl rounded-lg  flex flex-col  
+             bg-zinc-500 text-yellow-300 items-center justify-between" 
           >
             <Link href={`/product/${product.id}`}>
               <Image
@@ -22,11 +23,11 @@ const Products = () => {
                 className=""
               />
             </Link>
-            <div className="text-xl font-bold mt-4 text-center">
+            <div className="text-xl font-bold mt-0 ">
               <h2>{product.title}</h2>
-              <div>قیمت :{product.price} تومان</div>
+              <p>قیمت :{product.price} تومان</p>
               <Link href={`/product/${product.id}`}>
-                <button className="primery-button mt-4">بیشتر...</button>
+                <button className="primery-button w-[15rem]">بیشتر...</button>
               </Link>
             </div>
           </div>
