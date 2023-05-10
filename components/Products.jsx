@@ -11,7 +11,6 @@ const Products = () => {
             className="p-8 shadow-xl rounded-lg  flex flex-col  gap-6
              bg-zinc-500 text-yellow-300 items-center " 
           >
-            <Link href={`/product/${product.id}`}>
               <Image
                 alt={product.image}
                 width={230}
@@ -20,7 +19,6 @@ const Products = () => {
                 style={{ objectFit: 'content', height: '230px' }}
                 className=""
               />
-            </Link>
             <div className="text-xl font-bold flex flex-col gap-4 items-center ">
               <h2>{product.title}</h2>
               <p>قیمت :{product.price} تومان</p>

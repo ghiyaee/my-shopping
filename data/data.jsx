@@ -3,7 +3,7 @@ export const data = {
   products: [
     {
       id: 1,
-      title: 'APPEL',
+      title: 'APPLE',
       price: 15000000,
       image: ['/app14.png', '/app14b.png'],
       details: {
@@ -13,6 +13,7 @@ export const data = {
         memory: '128GB',
         os: 'iOS15',
       },
+      countInStack: 5,
     },
     {
       id: 2,
@@ -26,10 +27,11 @@ export const data = {
         memory: '128GB',
         os: 'android 12',
       },
+      countInStack: 3,
     },
     {
       id: 3,
-      title: 'MOTORELA',
+      title: 'MOTOROLA',
       price: 3000,
       image: ['/motorz.png', '/motorzb.png'],
       details: {
@@ -55,7 +57,7 @@ export const data = {
     },
     {
       id: 5,
-      title: 'APPEL',
+      title: 'APPLE',
       price: 1000,
       image: ['/app14.png', '/app14b.png'],
       details: {
@@ -81,7 +83,7 @@ export const data = {
     },
     {
       id: 7,
-      title: 'MOTORELA',
+      title: 'MOTOROLA',
       price: 1000,
       image: ['/motorz.png', '/motorzb.png'],
       details: {

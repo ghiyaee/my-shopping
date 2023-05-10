@@ -8,6 +8,10 @@ const Crad = () => {
   const removeHandle = (item) => {
     dispatch({ type: 'ERMOVE_ITEM' ,payload:item});
   }
+  const updatcountInStack = (item, qunty) => {
+    const quantity=+qunty
+      dispatch({ type: 'ADD_NEW_ITEM', payload: { ...item, quantity } });
+  }
   return (
     <div className=" flex  justify-center gap-8 items-center flex-wrap mt-0">
       {cart.cartItems.length === 0 ? (
@@ -34,16 +38,26 @@ const Crad = () => {
                 <div className="flex items-center text-center flex-col  md:flex-row md:p-0">
                   <Image
                     src={`/images${item.image[0]}`}
-                    width={90}
+                    width={120}
                     height={150}
                     alt={item.title}
                   />
                   <h2 className="p-6 w-[10rem]"> {item.title}</h2>
                   <div className="p-6 w-[10rem]">
-                    {' '}
                     قیمت به تومان {item.price}
                   </div>
-                  <div className="p-6 w-[10rem]"> تعداد :{item.quantity}</div>
+                  <div className="p-6 w-[10rem]">
+                    تعداد :
+                    <select value={item.quantity}
+                      className='bg-zinc-500 text-3xl outline-0'
+                      onChange={(e)=> updatcountInStack(item,e.target.value)}>
+                      {[...Array(item.countInStack).keys()].map((c) => (
+                        <option key={c + 1} value={c + 1}>
+                          {c + 1}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
                 <button
                   className="primery-button"
