@@ -103,7 +103,7 @@ const Slider = () => {
                 className={`transition duration-1000 ease-in-out`}
               />
             </div>
-            <div className="hidden md:block text-yellow-400 text-7xl ml-16 ">
+            <div className="hidden md:block text-yellow-300 text-7xl ml-16 ">
               بهترین برای بهترین ها
             </div>
             <div onClick={handelItemPriv} className="hidden priv">

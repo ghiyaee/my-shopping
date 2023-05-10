@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Products = () => {
   return (
     <>
-      <div className=" flex justify-center flex-wrap gap-8 items-center  ">
+      <div className="container m-auto flex justify-center flex-wrap gap-8 items-center  ">
         {data.products.map((product) => (
           <div
             key={product.id}
@@ -21,7 +21,7 @@ const Products = () => {
                 className=""
               />
             </Link>
-            <div className="text-xl font-bold mt-0 ">
+            <div className="text-xl font-bold flex flex-col gap-4 items-center ">
               <h2>{product.title}</h2>
               <p>قیمت :{product.price} تومان</p>
               <Link href={`/product/${product.id}`}>
