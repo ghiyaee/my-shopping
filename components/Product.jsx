@@ -15,7 +15,7 @@ const Product = ({ product }) => {
     <div className="container m-auto min-h-screen flex flex-col gap-4 justify-center ">
       <div
         className="  flex gap-8 justify-around flex-wrap items-center
-       shadow shadow-cyan-800 rounded-lg p-6 mb-6 bg-zinc-500"
+       shadow  rounded-lg p-6 mb-6 bg-zinc-500 "
       >
         <div className="flex flex-wrap justify-center gap-8 ">
           <Image
@@ -44,7 +44,7 @@ const Product = ({ product }) => {
             <p>ظرفیت حافظه :&nbsp; &nbsp;{product.details.memory}</p>
             <p>سیستم عامل :&nbsp; &nbsp;{product.details.os}</p>
           </div>
-          <button className="primery-button w-full" onClick={handleAddItem}>
+          <button className="primery-button w-full mt-4" onClick={handleAddItem}>
             سفارش
           </button>
         </div>

@@ -18,7 +18,7 @@ body {
 }
 
 .primery-button {
-  @apply p-4 bg-blue-400 mt-4 text-xl font-bold hover:bg-blue-600
+  @apply p-4 bg-red-500  text-white text-xl font-bold hover:bg-red-600
     transition-all rounded-md hover:text-white duration-700;
 }
 
@@ -32,9 +32,9 @@ lg:flex-col gap-6
 }
 .priv {
   @apply md:block absolute top-[50%] right-10
- text-yellow-400 text-4xl  p-2 cursor-pointer opacity-75;
+ text-red-500 text-5xl  p-2 cursor-pointer ;
 }
 .next {
   @apply md:block absolute left-10 top-[50%]  p-2
- text-yellow-400 text-4xl  cursor-pointer opacity-75;
+ text-red-500 text-5xl  cursor-pointer ;
 }

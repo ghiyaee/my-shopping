@@ -5,55 +5,55 @@ import { useEffect, useState } from 'react';
 import { data } from '@/data/data';
 const Slider = () => {
   const [state, setState] = useState([]);
-  let [color1, setColor1] = useState('bg-blue-500');
-  let [color2, setColor2] = useState('bg-blue-100');
-  let [color3, setColor3] = useState('bg-blue-100');
-  let [color4, setColor4] = useState('bg-blue-100');
+  let [color1, setColor1] = useState('bg-red-500');
+  let [color2, setColor2] = useState('bg-red-100');
+  let [color3, setColor3] = useState('bg-red-100');
+  let [color4, setColor4] = useState('bg-red-100');
   let [counter, setCounter] = useState(0);
 
   const handelItemNext = () => {
     if (counter < state.length - 1) {
       setCounter((prevConter) => prevConter + 1);
       if (counter === 0) {
-        setColor2('bg-blue-500');
-        setColor1('bg-blue-100');
+        setColor2('bg-red-500');
+        setColor1('bg-red-100');
       } else if (counter === 1) {
-        setColor3('bg-blue-500');
-        setColor2('bg-blue-100');
+        setColor3('bg-red-500');
+        setColor2('bg-red-100');
       }if (counter === 2) {
-        setColor4('bg-blue-500');
-        setColor3('bg-blue-100');
+        setColor4('bg-red-500');
+        setColor3('bg-red-100');
       }
       
     } else {
       setCounter(0);
-      setColor1('bg-blue-500');
-      setColor2('bg-blue-100');
-      setColor3('bg-blue-100');
-       setColor4('bg-blue-100');
+      setColor1('bg-red-500');
+      setColor2('bg-red-100');
+      setColor3('bg-red-100');
+       setColor4('bg-red-100');
     }
   };
   const handelItemPriv = () => {
     if (counter > 0) {
       setCounter((prevConter) => prevConter - 1);
       if (counter === 1) {
-        setColor2('bg-blue-100');
-        setColor1('bg-blue-500');
+        setColor2('bg-red-100');
+        setColor1('bg-red-500');
       }
       if (counter === 2) {
-        setColor3('bg-blue-100');
-        setColor2('bg-blue-500');
+        setColor3('bg-red-100');
+        setColor2('bg-red-500');
       }
       if (counter === 3) {
-        setColor4('bg-blue-100');
-        setColor3('bg-blue-500');
+        setColor4('bg-red-100');
+        setColor3('bg-red-500');
       }
     }
     else
     {
       setCounter(3);
-      setColor1('bg-blue-100');
-        setColor4('bg-blue-500');
+      setColor1('bg-red-100');
+        setColor4('bg-red-500');
       }
     
   };
@@ -67,21 +67,21 @@ const Slider = () => {
       if (counter < 3) {
         setCounter((prevConter) => prevConter + 1);
         if (counter === 0) {
-          setColor2('bg-blue-500');
-          setColor1('bg-blue-100');
+          setColor2('bg-red-500');
+          setColor1('bg-red-100');
         } else if (counter === 1) {
-          setColor3('bg-blue-500');
-          setColor2('bg-blue-100');
+          setColor3('bg-red-500');
+          setColor2('bg-red-100');
         } else if (counter === 2) {
-          setColor4('bg-blue-500');
-          setColor3('bg-blue-100');
+          setColor4('bg-red-500');
+          setColor3('bg-red-100');
         }
       } else {
         setCounter(0);
-        setColor1('bg-blue-500');
-        setColor2('bg-blue-100');
-        setColor3('bg-blue-100');
-        setColor4('bg-blue-100');
+        setColor1('bg-red-500');
+        setColor2('bg-red-100');
+        setColor3('bg-red-100');
+        setColor4('bg-red-100');
       }
     }, 4000);
     return () => {
