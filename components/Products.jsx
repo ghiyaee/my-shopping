@@ -6,11 +6,11 @@ const Products = () => {
  
   return (
     <>
-      <div className="flex justify-center flex-wrap gap-8 my-10 md:p-16  ">
+      <div className="flex justify-center flex-wrap gap-8 items-center my-10 md:p-16  ">
         {data.products.map((product) => (
           <div
             key={product.id}
-            className="p-8 shadow-xl rounded-lg flex flex-col justify-between items-center bg-[#f7f2e6] "
+            className="p-8 shadow-xl rounded-lg  flex flex-col justify-between items-center bg-[#f7f2e6] "
           >
             <Link href={`/product/${product.id}`}>
               <Image
