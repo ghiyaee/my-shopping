@@ -4,7 +4,7 @@ export const data = {
     {
       id: 1,
       title: 'APPEL',
-      price: 1000,
+      price: 15000000,
       image: ['/app14.png', '/app14b.png'],
       details: {
         camera: '14MP',
@@ -17,7 +17,7 @@ export const data = {
     {
       id: 2,
       title: 'PIXEL',
-      price: 1000,
+      price: 12000000,
       image: ['/pixel7.png', '/pixel7b.png', '/app14.png'],
       details: {
         camera: '14MP',
@@ -30,7 +30,7 @@ export const data = {
     {
       id: 3,
       title: 'MOTORELA',
-      price: 1000,
+      price: 3000,
       image: ['/motorz.png', '/motorzb.png'],
       details: {
         camera: '14MP',
@@ -43,7 +43,7 @@ export const data = {
     {
       id: 4,
       title: 'SAMSUNG',
-      price: 1000,
+      price: 4500,
       image: ['/samflip.png', '/samflipb.png'],
       details: {
         camera: '14MP',
