@@ -12,8 +12,8 @@ const Crad = () => {
     <div className=" flex  justify-around items-center flex-wrap mt-6">
       {cart.cartItems.length === 0 ? (
         <h2
-          className="w-[40rem] flex justify-center items-center text-3xl 
-          p-6 bg-zinc-500 rounded-lg text-yellow-100 shadow-lg mr-0"
+          className="w-[40rem] flex justify-center items-center md:text-3xl 
+          p-6 bg-zinc-500 rounded-lg text-yellow-100 shadow-lg mr-0" 
         >
           سبد خرید شما خالی است &nbsp;
           <Link className="text-blue-300" href={'/'}>
@@ -34,14 +34,16 @@ const Crad = () => {
                     src={`/images${item.image[0]}`}
                     width={90}
                     height={150}
-                    alt={i.title}
+                    alt={item.title}
                   />
                   <h2 className="p-6 w-[10rem]"> {item.title}</h2>
                   <div className="p-6 w-[10rem]">
                     {' '}
                     قیمت به تومان {item.price}
                   </div>
-                  <div className="p-6 w-[10rem]"> تعداد : {item.quantity}</div>
+                  <div className="p-6 w-[10rem]"> تعداد :
+                    {item.quantity}
+                  </div>
                 </div>
                 <button
                   className="primery-button"
