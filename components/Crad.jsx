@@ -9,11 +9,11 @@ const Crad = () => {
     dispatch({ type: 'ERMOVE_ITEM' ,payload:item});
   }
   return (
-    <div className=" flex  justify-around items-center flex-wrap mt-6">
+    <div className=" flex  justify-center gap-8 items-center flex-wrap mt-6">
       {cart.cartItems.length === 0 ? (
         <h2
-          className="w-[40rem] flex justify-center items-center md:text-3xl 
-          p-6 bg-zinc-500 rounded-lg text-yellow-100 shadow-lg mr-0" 
+          className="w-[35rem] flex justify-center items-center md:text-3xl 
+          p-6 bg-zinc-500  text-yellow-100 shadow-lg mr-0" 
         >
           سبد خرید شما خالی است &nbsp;
           <Link className="text-blue-300" href={'/'}>

@@ -6,7 +6,7 @@ const Products = () => {
  
   return (
     <>
-      <div className="flex justify-center flex-wrap gap-8 items-center my-10 md:p-16  ">
+      <div className="container m-auto flex justify-center flex-wrap gap-8 items-center mt-10 md:p-0 ">
         {data.products.map((product) => (
           <div
             key={product.id}
