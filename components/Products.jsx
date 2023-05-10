@@ -1,9 +1,7 @@
 import { data } from '@/data/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import Slider from './Slider';
 const Products = () => {
- 
   return (
     <>
       <div className="container m-auto flex justify-center flex-wrap gap-8 items-center mt-10 md:p-0 ">
