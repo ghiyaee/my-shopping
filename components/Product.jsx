@@ -33,7 +33,7 @@ const Product = ({ product }) => {
             className="md:w-[350px]"
           />
         </div>
-        <div className="p-6 font-bold md:p-8 shadow-xl bg-[#f7f2e6] rounded-lg sm:text-2xl ">
+        <div className="p-6 mt-4 font-bold md:p-8 shadow-xl bg-[#f7f2e6] rounded-lg sm:text-2xl ">
           <div>مشخصات گوشی:</div>
           <div>نام محصول :&nbsp;{product.title}</div>
           <div>قیمت :&nbsp;{product.price} تومان</div>
@@ -48,7 +48,7 @@ const Product = ({ product }) => {
             className="primery-button w-full mt-4"
             onClick={handleAddItem}
           >
-            سفارش
+            خرید و سفارش
           </button>
         </div>
       </div>

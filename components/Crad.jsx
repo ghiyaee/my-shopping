@@ -64,7 +64,7 @@ const Crad = () => {
                     className="primery-button mt-2 "
                     onClick={() => removeHandle(item)}
                   >
-                    انصراف
+                   انصراف از خرید
                   </button>
                 </div>
               </div>
