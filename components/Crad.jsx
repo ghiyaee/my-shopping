@@ -73,7 +73,7 @@ const Crad = () => {
           </div>
         </>
       )}
-      <div>
+      <div className='mt-4'>
         {cart.cartItems.length !== 0 ? (
           <div
             className="w-[20rem] rounded-lg shadow p-4 mt-0
