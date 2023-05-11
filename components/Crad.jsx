@@ -13,7 +13,7 @@ const Crad = () => {
       dispatch({ type: 'ADD_NEW_ITEM', payload: { ...item, quantity } });
   }
   return (
-    <div className=" container m-auto flex  justify-center gap-4 p-6 flex-wrap mt-0 ">
+    <div className=" container m-auto flex  justify-center gap-4 p-8 flex-wrap mt-0 ">
       {cart.cartItems.length === 0 ? (
         <h2
           className="w-[35rem] flex justify-center items-center md:text-3xl 
@@ -45,12 +45,13 @@ const Crad = () => {
                   />
                   <h2 className=" w-[10rem] font-bold"> {item.title}</h2>
                   <p className="md:m-0 w-[10rem] md:w-[18rem]">
-                    {item.price}- قیمت به تومان                </p>
+                    {item.price}- قیمت به تومان{' '}
+                  </p>
                   <div className="md:m-4 w-[10rem]">
                     تعداد (+/-)
                     <select
                       value={item.quantity}
-                      className="bg-zinc-500 text-3xl outline-0"
+                      className="bg-zinc-500 text-3xl outline-0 cu"
                       onChange={(e) => updatcountInStack(item, e.target.value)}
                     >
                       {[...Array(item.countInStack).keys()].map((c) => (
@@ -64,7 +65,7 @@ const Crad = () => {
                     className="primery-button mt-2 "
                     onClick={() => removeHandle(item)}
                   >
-                   انصراف از خرید
+                    انصراف از خرید
                   </button>
                 </div>
               </div>
@@ -107,7 +108,9 @@ const Crad = () => {
               )}
               تومان
             </div>
-            <button className="primery-button mt-4">تایید نهایی </button>
+            <Link href={'/checkOut'}>
+              <button className="primery-button mt-4">تایید نهایی </button>
+            </Link>
           </div>
         ) : (
           ''

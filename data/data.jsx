@@ -41,12 +41,13 @@ export const data = {
         memory: '128GB',
         os: 'android 12',
       },
+      countInStack:0,
     },
     {
       id: 4,
       title: 'SAMSUNG',
       price: 4500,
-      image: ['/samflip.png', '/samflipb.png'],
+      image: ['/samflipb.png', '/samflip.png'],
       details: {
         camera: '14MP',
         cameraSelfie: '8MP',
@@ -54,6 +55,7 @@ export const data = {
         memory: '128GB',
         os: 'android 12',
       },
+      countInStack: 3,
     },
     {
       id: 5,
@@ -67,6 +69,7 @@ export const data = {
         memory: '128GB',
         os: 'iOS15',
       },
+      countInStack: 3,
     },
     {
       id: 6,
@@ -80,6 +83,7 @@ export const data = {
         memory: '128GB',
         os: 'android 12',
       },
+      countInStack: 3,
     },
     {
       id: 7,
@@ -93,6 +97,7 @@ export const data = {
         memory: '128GB',
         os: 'android 12',
       },
+      countInStack: 3,
     },
     {
       id: 8,
@@ -106,6 +111,7 @@ export const data = {
         memory: '128GB',
         os: 'android 12',
       },
+      countInStack: 3,
     },
   ],
 };

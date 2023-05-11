@@ -2,9 +2,11 @@ import Image from 'next/image';
 import { useContext } from 'react';
 import { MyContext } from "../utils/context"
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 const Product = ({ product }) => {
   const router = useRouter()
-  const {state, dispatch}=useContext(MyContext)
+  const { state, dispatch } = useContext(MyContext)
+  const {cart}=state
   const handleAddItem = () => {
     const existItem = state.cart.cartItems.find(f => f.id === product.id)
     const quantity=existItem ? existItem.quantity + 1 : 1
@@ -43,13 +45,22 @@ const Product = ({ product }) => {
             <p>باطری :&nbsp; &nbsp;{product.details.battery}</p>
             <p>ظرفیت حافظه :&nbsp; &nbsp;{product.details.memory}</p>
             <p>سیستم عامل :&nbsp; &nbsp;{product.details.os}</p>
+            <p>موجودی:&nbsp; &nbsp;{product.countInStack}&nbsp; عدد</p>
           </div>
-          <button
-            className="primery-button w-full mt-4"
-            onClick={handleAddItem}
-          >
-            خرید و سفارش
-          </button>
+          {product.countInStack > 0 ? (
+            <button
+              className="primery-button w-full mt-4"
+              onClick={handleAddItem}
+            >
+              خرید و سفارش
+            </button>
+          ) : (
+            <Link href={'/'}>
+              <button className="primery-button w-full mt-4">
+                برگشت به صفحه اصلی
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
