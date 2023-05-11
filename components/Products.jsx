@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Products = () => {
   return (
     <>
-      <div className="container m-auto flex justify-center flex-wrap gap-8 items-center  ">
+      <div className="container m-auto grid grid-cols-1  gap-4 md:grid-cols-4   ">
         {data.products.map((product) => (
           <div
             key={product.id}
