@@ -28,7 +28,7 @@ const Crad = () => {
         </h2>
       ) : (
         <>
-          <div className="flex flex-col  gap-4  ">
+          <div className="grid grid-cols-1 gap-4  ">
             {cart.cartItems.map((item) => (
               <div
                 key={item.id}
