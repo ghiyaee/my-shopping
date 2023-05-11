@@ -12,28 +12,28 @@ const Product = ({ product }) => {
     router.push('/card')
    };
   return (
-    <div className="container m-auto min-h-screen flex flex-col gap-4 justify-center ">
+    <div className="container m-auto min-h-screen flex flex-col gap-0 justify-center p-6 ">
       <div
-        className="  flex gap-8 justify-around flex-wrap items-center
-       shadow  rounded-lg p-6 mb-6 bg-zinc-500 "
+        className="  flex flex-col gap-6 justify-around flex-wrap items-center
+       shadow  rounded-lg p-4 mb-0 bg-zinc-500 "
       >
-        <div className="flex flex-wrap justify-center gap-8 ">
+        <div className="flex flex-col flex-wrap justify-center gap-2 items-center ">
           <Image
-            width={300}
+            width={230}
             height={300}
             src={`/images${product.image[0]}`}
             alt={product.title}
             className=""
           />
           <Image
-            width={300}
+            width={230}
             height={300}
             src={`/images${product.image[1]}`}
             alt={product.title}
             className=""
           />
         </div>
-        <div className="p-10 font-bold  shadow-xl bg-[#f7f2e6] rounded-lg sm:text-2xl ">
+        <div className="p-4 font-bold  shadow-xl bg-[#f7f2e6] rounded-lg sm:text-2xl ">
           <div>مشخصات گوشی:</div>
           <div>نام محصول :&nbsp;{product.title}</div>
           <div>قیمت :&nbsp;{product.price} تومان</div>
