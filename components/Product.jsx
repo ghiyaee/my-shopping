@@ -14,7 +14,7 @@ const Product = ({ product }) => {
   return (
     <div className="container m-auto min-h-screen flex flex-col gap-0 justify-center p-6 ">
       <div
-        className="  flex flex-col gap-6 justify-around flex-wrap items-center
+        className="  flex flex-col gap-6 justify-between flex-wrap items-center
        shadow  rounded-lg p-4 mb-0 bg-zinc-500 "
       >
         <div className="flex flex-col flex-wrap justify-center gap-2 items-center ">
