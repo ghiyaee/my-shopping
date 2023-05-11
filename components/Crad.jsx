@@ -32,19 +32,19 @@ const Crad = () => {
             {cart.cartItems.map((item) => (
               <div
                 key={item.id}
-                className="w-[20rem] h-[20rem] flex  items-center md:flex-row md:w-full md:h-[10rem]
+                className="w-[20rem] h-[22rem] flex  items-center md:flex-row md:w-full md:h-[10rem]
                 rounded-lg shadow p-6 bg-zinc-500 text-yellow-300 text-xl md:text-2xl justify-center "
               >
                 <div className="flex items-center  text-center flex-col md:flex-row md:p-4">
                   <Image
                     src={`/images${item.image[0]}`}
-                    width={80}
+                    width={120}
                     height={150}
                     alt={item.title}
                     className="mb-4 md:mb-0"
                   />
                   <h2 className=" w-[10rem] font-bold"> {item.title}</h2>
-                  <p className="md:m-0 w-[10rem] md:w-[18rem]">
+                  <p className="md:m-0 w-[18rem]">
                     {item.price}- قیمت به تومان{' '}
                   </p>
                   <div className="md:m-4 w-[10rem]">
@@ -73,10 +73,10 @@ const Crad = () => {
           </div>
         </>
       )}
-      <div className='mt-4'>
+      <div className='mt-4 md:mt-0'>
         {cart.cartItems.length !== 0 ? (
           <div
-            className="w-[20rem] rounded-lg shadow p-4 mt-0
+            className="w-[20rem]  rounded-lg shadow p-4 mt-0
          bg-zinc-500 text-yellow-300 text-xl text-center md:p-10"
           >
             <p className="mb-4 font-bold"> فاکتور خرید</p>
@@ -92,7 +92,7 @@ const Crad = () => {
               تومان
             </div>
             <div>
-              مالیات ارزش افزوده :&nbsp;{' '}
+              مالیات برارزش افزوده :&nbsp;{' '}
               {cart.cartItems.reduce(
                 (a, c) => a + (c.quantity * c.price * 1) / 100,
                 0
