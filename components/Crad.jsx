@@ -13,7 +13,7 @@ const Crad = () => {
       dispatch({ type: 'ADD_NEW_ITEM', payload: { ...item, quantity } });
   }
   return (
-    <div className=" flex  justify-center gap-8 items-center flex-wrap mt-0">
+    <div className=" container m-auto flex  justify-center gap-4 p-6 flex-wrap mt-0 ">
       {cart.cartItems.length === 0 ? (
         <h2
           className="w-[35rem] flex justify-center items-center md:text-3xl 
@@ -28,29 +28,31 @@ const Crad = () => {
         </h2>
       ) : (
         <>
-          <div className="flex flex-col gap-6  ">
+          <div className="flex flex-col  gap-4  ">
             {cart.cartItems.map((item) => (
               <div
                 key={item.id}
-                className=" flex  flex-col items-center md:flex-row
-                rounded-lg shadow p-8 bg-zinc-500 text-yellow-300 text-xl justify-center "
+                className="w-[20rem] h-[20rem] flex  items-center md:flex-row md:w-full md:h-[10rem]
+                rounded-lg shadow p-6 bg-zinc-500 text-yellow-300 text-xl md:text-2xl justify-center "
               >
-                <div className="flex items-center text-center flex-col  md:flex-row md:p-0">
+                <div className="flex items-center  text-center flex-col md:flex-row md:p-4">
                   <Image
                     src={`/images${item.image[0]}`}
-                    width={120}
+                    width={80}
                     height={150}
                     alt={item.title}
+                    className="mb-4 md:mb-0"
                   />
-                  <h2 className="p-6 w-[10rem]"> {item.title}</h2>
-                  <div className="p-6 w-[10rem]">
-                    قیمت به تومان {item.price}
-                  </div>
-                  <div className="p-6 w-[10rem]">
-                    تعداد :
-                    <select value={item.quantity}
-                      className='bg-zinc-500 text-3xl outline-0'
-                      onChange={(e)=> updatcountInStack(item,e.target.value)}>
+                  <h2 className=" w-[10rem] font-bold"> {item.title}</h2>
+                  <p className="md:m-0 w-[10rem] md:w-[18rem]">
+                    {item.price}- قیمت به تومان                </p>
+                  <div className="md:m-4 w-[10rem]">
+                    تعداد (+/-)
+                    <select
+                      value={item.quantity}
+                      className="bg-zinc-500 text-3xl outline-0"
+                      onChange={(e) => updatcountInStack(item, e.target.value)}
+                    >
                       {[...Array(item.countInStack).keys()].map((c) => (
                         <option key={c + 1} value={c + 1}>
                           {c + 1}
@@ -58,53 +60,59 @@ const Crad = () => {
                       ))}
                     </select>
                   </div>
+                  <button
+                    className="primery-button mt-2 "
+                    onClick={() => removeHandle(item)}
+                  >
+                    انصراف
+                  </button>
                 </div>
-                <button
-                  className="primery-button"
-                  onClick={() => removeHandle(item)}
-                >
-                  انصراف
-                </button>
               </div>
             ))}
           </div>
         </>
       )}
-      {cart.cartItems.length !== 0 ? (
-        <div
-          className="w-[25rem] rounded-lg shadow p-0 mt-10
+      <div>
+        {cart.cartItems.length !== 0 ? (
+          <div
+            className="w-[20rem] rounded-lg shadow p-4 mt-0
          bg-zinc-500 text-yellow-300 text-xl text-center md:p-10"
-        >
-          <p className="mb-4 font-bold"> فاکتور خرید</p>
-          <div>
-            تعداد :&nbsp;{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+          >
+            <p className="mb-4 font-bold"> فاکتور خرید</p>
+            <div>
+              تعداد :&nbsp;{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+            </div>
+            <div>
+              جمع اقلام :&nbsp;
+              {cart.cartItems.reduce(
+                (a, c) => a + c.quantity * c.price,
+                0
+              )}{' '}
+              تومان
+            </div>
+            <div>
+              مالیات ارزش افزوده :&nbsp;{' '}
+              {cart.cartItems.reduce(
+                (a, c) => a + (c.quantity * c.price * 1) / 100,
+                0
+              )}
+              تومان
+            </div>
+            <div>
+              جمع فاکتور:&nbsp;
+              {cart.cartItems.reduce(
+                (a, c) =>
+                  a + (c.quantity * c.price * 1) / 100 + c.quantity * c.price,
+                0
+              )}
+              تومان
+            </div>
+            <button className="primery-button mt-4">تایید نهایی </button>
           </div>
-          <div>
-            جمع اقلام :&nbsp;
-            {cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)} تومان
-          </div>
-          <div>
-            مالیات ارزش افزوده :&nbsp;{' '}
-            {cart.cartItems.reduce(
-              (a, c) => a + (c.quantity * c.price * 1) / 100,
-              0
-            )}
-            تومان
-          </div>
-          <div>
-            جمع فاکتور:&nbsp;
-            {cart.cartItems.reduce(
-              (a, c) =>
-                a + (c.quantity * c.price * 1) / 100 + c.quantity * c.price,
-              0
-            )}
-            تومان
-          </div>
-          <button className="primery-button w-full mt-4">تایید نهایی </button>
-        </div>
-      ) : (
-        ''
-      )}
+        ) : (
+          ''
+        )}
+      </div>
     </div>
   );
 };

@@ -14,26 +14,26 @@ const Product = ({ product }) => {
   return (
     <div className="container m-auto min-h-screen flex flex-col gap-0 justify-center p-6 ">
       <div
-        className="  flex flex-col gap-6 justify-between flex-wrap items-center
-       shadow  rounded-lg p-4 mb-0 bg-zinc-500 "
+        className="  flex flex-col md:flex-row gap-6 justify-between md:justify-around flex-wrap items-center
+       shadow  rounded-lg p-4 mb-0 bg-zinc-500  "
       >
-        <div className="flex flex-col flex-wrap justify-center gap-2 items-center ">
+        <div className="flex flex-col flex-wrap md:flex-row  justify-center gap-2 items-center ">
           <Image
             width={230}
             height={300}
             src={`/images${product.image[0]}`}
             alt={product.title}
-            className=""
+            className="md:w-[250px]"
           />
           <Image
             width={230}
             height={300}
             src={`/images${product.image[1]}`}
             alt={product.title}
-            className=""
+            className="md:w-[350px]"
           />
         </div>
-        <div className="p-4 font-bold  shadow-xl bg-[#f7f2e6] rounded-lg sm:text-2xl ">
+        <div className="p-6 font-bold md:p-8 shadow-xl bg-[#f7f2e6] rounded-lg sm:text-2xl ">
           <div>مشخصات گوشی:</div>
           <div>نام محصول :&nbsp;{product.title}</div>
           <div>قیمت :&nbsp;{product.price} تومان</div>
@@ -44,7 +44,10 @@ const Product = ({ product }) => {
             <p>ظرفیت حافظه :&nbsp; &nbsp;{product.details.memory}</p>
             <p>سیستم عامل :&nbsp; &nbsp;{product.details.os}</p>
           </div>
-          <button className="primery-button w-full mt-4" onClick={handleAddItem}>
+          <button
+            className="primery-button w-full mt-4"
+            onClick={handleAddItem}
+          >
             سفارش
           </button>
         </div>
