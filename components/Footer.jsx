@@ -6,7 +6,7 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <footer className="h-30  w-full shadow-inner border flex justify-around
-           items-center text-2xl font-bold flex-wrap p-8 gap-4  mt-6 text-center"
+           items-center text-2xl font-bold flex-wrap p-8 gap-4  mt-0 text-center"
     >
       <div className="mb-4">
         این یک وب سایت فروشگاهی بوده و در حال توسعه می باشد

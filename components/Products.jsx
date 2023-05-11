@@ -4,21 +4,21 @@ import Link from 'next/link';
 const Products = () => {
   return (
     <>
-      <div className="container m-auto grid grid-cols-1  gap-4 md:grid-cols-4   ">
+      <div className="container m-auto grid grid-cols-1 p-6  gap-8 md:p-0 lg:p-0 md:grid-cols-3 lg:grid-cols-4   ">
         {data.products.map((product) => (
           <div
             key={product.id}
-            className="p-8 shadow-xl rounded-lg  flex flex-col  gap-6
-             bg-zinc-500 text-yellow-300 items-center " 
+            className=" p-6 shadow-xl rounded-lg  flex flex-col  gap-4
+             bg-zinc-500 text-yellow-300 items-center  "
           >
-              <Image
-                alt={product.image}
-                width={230}
-                height={230}
-                src={`/images${product.image[0]}`}
-                style={{ objectFit: 'content', height: '230px' }}
-                className=""
-              />
+            <Image
+              alt={product.image}
+              width={230}
+              height={230}
+              src={`/images${product.image[0]}`}
+              style={{ objectFit: 'content', height: '230px' }}
+              className=""
+            />
             <div className="text-xl font-bold flex flex-col gap-4 items-center ">
               <h2>{product.title}</h2>
               <p>قیمت :{product.price} تومان</p>
