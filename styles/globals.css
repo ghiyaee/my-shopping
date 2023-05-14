@@ -27,14 +27,14 @@ body {
             items-center justify-center w-8 h-8 text-center text-white;
 }
 .slider{
-@apply relative  bg-zinc-500 shadow-2xl flex justify-center items-center h-[40rem] 
+@apply relative  bg-zinc-500 shadow-2xl flex justify-center items-center min-h-[35rem] md:min-h-[40rem] 
 lg:flex-col gap-6
 }
 .priv {
-  @apply md:block absolute top-[50%] right-10
+  @apply md:block absolute top-[50%] transform -translate-y-[50%] right-10
  text-red-500 text-5xl  p-2 cursor-pointer ;
 }
 .next {
-  @apply md:block absolute left-10 top-[50%]  p-2
+  @apply md:block absolute left-10 top-[50%] transform -translate-y-[50%] p-2
  text-red-500 text-5xl  cursor-pointer ;
 }

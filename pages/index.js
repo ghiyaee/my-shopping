@@ -3,7 +3,7 @@ import Slider from '@/components/Slider';
 export default function Home() {
   return (
     <main >
-      <div className="hidden w-full lg:block"><Slider/></div>
+      <div className="  "><Slider/></div>
       <Products />
     </main>
   );
