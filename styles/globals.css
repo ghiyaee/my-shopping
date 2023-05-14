@@ -27,8 +27,8 @@ body {
             items-center justify-center w-8 h-8 text-center text-white;
 }
 .slider{
-@apply relative  bg-zinc-500 shadow-2xl flex justify-center items-center min-h-[35rem] md:min-h-[40rem] 
-lg:flex-col gap-6
+@apply relative  bg-zinc-500 shadow-2xl flex justify-center items-center min-h-[20rem] md:min-h-[40rem] 
+lg:flex-col gap-6 p-10
 }
 .priv {
   @apply md:block absolute top-[50%] transform -translate-y-[50%] right-10

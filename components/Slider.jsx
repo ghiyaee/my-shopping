@@ -93,14 +93,14 @@ const Slider = () => {
       <div className="slider">
         {state[counter] ? (
           <>
-            <div className="w-[28rem] h-[28rem]">
+            <div className="w-[25rem] h-[25rem] flex items-center justify-center">
               <Image
                 width={400}
-                height={400}
+                height={300}
                 src={`/images${state[counter]}`}
                 alt={'imgSlider'}
                 style={{ objectFit: 'cover ' }}
-                className={`transition duration-1000 ease-in-out`}
+                className={`transition duration-1000 ease-in-out `}
               />
             </div>
             <div className="hidden md:block text-yellow-300 text-7xl ml-16 ">
