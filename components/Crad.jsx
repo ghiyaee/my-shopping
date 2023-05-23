@@ -2,7 +2,9 @@ import { useContext } from 'react';
 import { MyContext } from '@/utils/context';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 const Crad = () => {
+  const router=useRouter()
   const { state, dispatch } = useContext(MyContext);
   const { cart } = state;
   const removeHandle = (item) => {
@@ -11,6 +13,14 @@ const Crad = () => {
   const updatcountInStack = (item, qunty) => {
     const quantity=+qunty
       dispatch({ type: 'ADD_NEW_ITEM', payload: { ...item, quantity } });
+  }
+  let user=false
+  const handelUser = () => {
+    if (user) {
+      router.push('/checkOut')
+    } else {
+      router.push('/login')
+    }
   }
   return (
     <div className=" container m-auto flex  justify-center gap-4 p-8 flex-wrap mt-0 ">
@@ -108,9 +118,7 @@ const Crad = () => {
               )}
               تومان
             </div>
-            <Link href={'/checkOut'}>
-              <button className="primery-button mt-4">تایید نهایی </button>
-            </Link>
+              <button className="primery-button mt-4" onClick={handelUser}>تایید نهایی </button>
           </div>
         ) : (
           ''

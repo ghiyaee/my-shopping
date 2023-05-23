@@ -25,8 +25,10 @@ const Header = () => {
               <SlBasket className="sm:text-3xl" />
             </Link>
           </div>
-            <div className='border bg-zinc-900 h-8 ml-2'></div>
-          <div className="sm:p-4">حساب کاربری</div>
+          <div className="border bg-zinc-900 h-8 ml-2"></div>
+          <Link href={'/login'}>
+            <div className="sm:p-4">حساب کاربری</div>
+          </Link>
         </nav>
       </header>
     );
