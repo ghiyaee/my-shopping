@@ -3,7 +3,7 @@ const Register = () => {
     return (
       <div className="flex flex-col items-center  bg-zinc-500 p-10  gap-4 rounded-lg w-[400px]">
         <h3 className="text-3xl text-yellow-300">فرم ثبت نام</h3>
-        <form className="flex flex-col gap-8 w-full">
+        <form className="flex flex-col gap-4 w-full">
           <input
             type="text"
             className="py-3  text-center text-2xl   outline-none rounded-lg"

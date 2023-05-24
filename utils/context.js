@@ -2,6 +2,7 @@ import { createContext, useReducer } from 'react';
 export const MyContext = createContext();
 const initial = {
   cart: { cartItems: [] },
+  person:{email:[],password:[]}
 };
 const reducer = (state, action) => {
   switch (action.type) {
@@ -21,6 +22,17 @@ const reducer = (state, action) => {
       const cartItems = state.cart.cartItems.filter((f) => f.id !== newItem.id);
       return { ...state, cart: { ...state.cart, cartItems } };
     }
+    case 'ADD_NEW_USERS': {
+      const newItem = action.payload;
+      const existItems = state.person.users.find((f) => f.id === newItem.id);
+      const cartItems = existItems
+        ? state.cart.cartItems.map((f) =>
+            f.title === existItems.title ? newItem : f
+          )
+        : [...state.cart.cartItems, newItem];
+      return { ...state, cart: { ...state.cart, cartItems } };
+    }
+
     default:
       return state;
   }

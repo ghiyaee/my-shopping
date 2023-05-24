@@ -4,24 +4,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 const Crad = () => {
-  const router=useRouter()
+  const router = useRouter();
   const { state, dispatch } = useContext(MyContext);
-  const { cart } = state;
+  const { cart, person } = state;
+
   const removeHandle = (item) => {
-    dispatch({ type: 'ERMOVE_ITEM' ,payload:item});
-  }
+    dispatch({ type: 'ERMOVE_ITEM', payload: item });
+  };
   const updatcountInStack = (item, qunty) => {
-    const quantity=+qunty
-      dispatch({ type: 'ADD_NEW_ITEM', payload: { ...item, quantity } });
-  }
-  let user=false
+    const quantity = +qunty;
+    dispatch({ type: 'ADD_NEW_ITEM', payload: { ...item, quantity } });
+  };
+
   const handelUser = () => {
-    if (user) {
-      router.push('/checkOut')
+    if (person.users.length > 0) {
+      router.push('/checkOut');
     } else {
-      router.push('/login')
+      router.push('/login');
     }
-  }
+  };
   return (
     <div className=" container m-auto flex  justify-center gap-4 p-8 flex-wrap mt-0 ">
       {cart.cartItems.length === 0 ? (
@@ -83,7 +84,7 @@ const Crad = () => {
           </div>
         </>
       )}
-      <div className='mt-4 md:mt-0'>
+      <div className="mt-4 md:mt-0">
         {cart.cartItems.length !== 0 ? (
           <div
             className="w-[20rem]  rounded-lg shadow p-4 mt-0
@@ -118,7 +119,9 @@ const Crad = () => {
               )}
               تومان
             </div>
-              <button className="primery-button mt-4" onClick={handelUser}>تایید نهایی </button>
+            <button className="primery-button mt-4" onClick={handelUser}>
+              تایید نهایی{' '}
+            </button>
           </div>
         ) : (
           ''
