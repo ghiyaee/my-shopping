@@ -15,24 +15,19 @@ const Login = () => {
   const handelUser = () => {
     const { newItem } = JSON.parse(localStorage.getItem('users'));
     if (newItem === undefined) {
-      setMessage('ایمیل یا رمز عبور معتبر نیست ');
-      return;
-    } else if (email === newItem.email && password === newItem.password) {
-      router.push('/checkOut');
-    } else if (email != newItem.email || password != newItem.password) {
-      setMessage('ایمیل یا رمز عبور معتبر نیست ');
+      setMessage('ایمیل یا رمز عبور نامعتبر یا خالی است ');
       setEmail('');
       setPassword('');
       return;
-    } else if (email === '' || password === '') {
-      setMessage('ایمیل یا رمز عبور خالی است ');
-    }
+    } else if (email === newItem.email && password === newItem.password) {
+      router.push('/checkOut');
+    } 
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessage('');
-    }, 1500);
+    }, 1900);
     return () => {
       clearTimeout(timer);
     };
@@ -61,7 +56,7 @@ const Login = () => {
           placeholder="پسورد خود را وارد کنید"
         />
         {message ? (
-          <p className="text-white font-blod text-2xl">{message}</p>
+          <p className="text-white font-blod text-xl">{message}</p>
         ) : (
           ''
         )}

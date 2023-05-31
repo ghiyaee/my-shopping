@@ -30,7 +30,7 @@ const Register = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessage('');
-    }, 1500);
+    }, 1700);
     return () => {
       clearTimeout(timer);
     };
