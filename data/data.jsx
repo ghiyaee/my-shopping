@@ -1,5 +1,7 @@
 export const data = {
   images: ['/app14.png', '/pixel7.png', '/motorz.png', '/samflipb.png'],
+  persons:{user:[],email:[],password:[]}
+  ,
   products: [
     {
       id: 1,

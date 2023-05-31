@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 const Crad = () => {
   const router = useRouter();
   const { state, dispatch } = useContext(MyContext);
-  const { cart, person } = state;
+  const { cart, persons } = state;
 
   const removeHandle = (item) => {
     dispatch({ type: 'ERMOVE_ITEM', payload: item });
@@ -17,7 +17,7 @@ const Crad = () => {
   };
 
   const handelUser = () => {
-    if (person.users.length > 0) {
+    if (persons.user.length > 0) {
       router.push('/checkOut');
     } else {
       router.push('/login');
