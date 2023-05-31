@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useContext } from 'react';
 import { MyContext } from '@/utils/context';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { data } from '@/data/data';
 
@@ -18,18 +18,23 @@ const Register = () => {
     e.preventDefault();
   };
   const handelRegister = () => {
-    const person = JSON.parse(localStorage.getItem('users'));
-    console.log(person);
-    // if (person.email === email) {
-    //   setMessage(`بااین ایمیل قبلا ثبت نام شده است`)
-    //   return
-    // } else {
-      
-    // }
-    dispatch({ type: 'ADD_NEW_USERS',payload:{user,email,password,} });
+    if (user.length < 5 || email.length < 12 || password.length < 8 ) {
+      setMessage(' مقادیر وارده شده صیح نیست');
+      setEmail('');
+      setPassword('');
+      return;
+    }
+    dispatch({ type: 'ADD_NEW_USERS', payload: { user, email, password } });
     router.push('./login');
-
   };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMessage('');
+    }, 1500);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [message]);
   return (
     <div className="flex flex-col items-center  bg-zinc-500 p-10  gap-4 rounded-lg w-[400px]">
       <h3 className="text-3xl text-yellow-300">فرم ثبت نام</h3>
@@ -62,7 +67,7 @@ const Register = () => {
         ) : (
           ''
         )}
-        {message ? <p className="text-white text-2xl">{message}</p> : ''}
+
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -78,6 +83,7 @@ const Register = () => {
         <button className=" primery-button mt-0 " onClick={handelRegister}>
           تایید ثبت نام
         </button>
+        {message ? <p className="text-white text-2xl">{message}</p> : ''}
       </form>
     </div>
   );

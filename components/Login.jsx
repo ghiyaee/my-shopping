@@ -5,44 +5,43 @@ import { useRouter } from 'next/navigation';
 const Login = () => {
   const router = useRouter();
   const { state } = useContext(MyContext);
-  const { users } = state
+  const { users } = state;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message,setMessage]=useState('')
+  const [message, setMessage] = useState('');
   const handelSubmit = (e) => {
     e.preventDefault();
   };
   const handelUser = () => {
-    
-    localStorage.setItem('users', JSON.stringify(users));
-    const person =JSON.parse(localStorage.getItem('users'))
-    const { newItem } = person;
-    if (email === newItem.email && password === newItem.password) {
+    const { newItem } = JSON.parse(localStorage.getItem('users'));
+    if (newItem === undefined) {
+      setMessage('ایمیل یا رمز عبور معتبر نیست ');
+      return;
+    } else if (email === newItem.email && password === newItem.password) {
       router.push('/checkOut');
     } else if (email != newItem.email || password != newItem.password) {
       setMessage('ایمیل یا رمز عبور معتبر نیست ');
       setEmail('');
       setPassword('');
+      return;
     } else if (email === '' || password === '') {
       setMessage('ایمیل یا رمز عبور خالی است ');
     }
-  }
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setMessage('')
-    }, 1500)
+      setMessage('');
+    }, 1500);
     return () => {
-      clearTimeout(timer)
-    }
-  }, [message])
+      clearTimeout(timer);
+    };
+  }, [message]);
   useEffect(() => {
-    if (!users) {
+    if (users) {
       localStorage.setItem('users', JSON.stringify(users));
-
-      //create and/or set a new localstorage variable called "state"
     }
-  }, [users]);
+  });
   return (
     <div className="flex flex-col items-center  bg-zinc-500 p-10  gap-4 rounded-lg w-[400px]">
       <h3 className="text-2xl text-yellow-300">فرم ورود</h3>
@@ -61,7 +60,11 @@ const Login = () => {
           className="py-3 text-center text-2xl   outline-none rounded-lg"
           placeholder="پسورد خود را وارد کنید"
         />
-        {message ? <p className='text-white font-blod text-2xl'>{message }</p>:''}
+        {message ? (
+          <p className="text-white font-blod text-2xl">{message}</p>
+        ) : (
+          ''
+        )}
         <button className="w-full primery-button" onClick={handelUser}>
           ورود
         </button>

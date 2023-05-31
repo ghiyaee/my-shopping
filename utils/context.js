@@ -1,8 +1,8 @@
-import { createContext, useReducer,useEffect } from 'react';
+import { createContext, useReducer, useEffect } from 'react';
 export const MyContext = createContext();
 const initial = {
   cart: { cartItems: [] },
-  users: []
+  users: [],
 };
 
 const reducer = (state, action) => {
@@ -26,16 +26,14 @@ const reducer = (state, action) => {
     case 'ADD_NEW_USERS': {
       const newItem = action.payload;
       console.log(newItem);
-      localStorage.setItem('users',JSON.stringify(newItem))
-      return{...state,users:{...state.users,newItem}}
-      
-      }
+      localStorage.setItem('users', JSON.stringify(newItem));
+      return { ...state, users: { ...state.users, newItem } };
+    }
     default:
       return state;
   }
 };
 const MyContextProvider = ({ children }) => {
-
   const [state, dispatch] = useReducer(reducer, initial);
   const value = { state, dispatch };
 
