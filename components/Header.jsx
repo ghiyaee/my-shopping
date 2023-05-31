@@ -1,12 +1,17 @@
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useContext ,useEffect} from 'react';
 import { MyContext } from '../utils/context';
 import { SlBasket } from 'react-icons/sl';
 
 const Header = () => {
   const { state, dispatch } = useContext(MyContext)
   const { cart, users } = state;
-  const { newItem } = users;
+  const { newUser} = users;
+   useEffect(() => {
+     if (users) {
+       localStorage.setItem('users', JSON.stringify(users));
+     }
+   });
     return (
       <header
         className="h-14 w-full shadow-xl 
@@ -28,12 +33,12 @@ const Header = () => {
           </div>
           <div className="border bg-zinc-900 h-8 ml-2"></div>
           <Link href={'/login'}>
-            {newItem ? (
+            {newUser ? (
               <div className="sm:p-4">
-                <span className='text-red-500'>کاربر:</span> {newItem.user}
+                <span className='text-red-500'>کاربر:</span> {newUser.user}
               </div>
             ) : (
-              <div className="sm:p-4">وارد / ثبت نام</div>
+              <div className="sm:p-4">ورود / ثبت نام</div>
             )}
           </Link>
         </nav>

@@ -13,13 +13,13 @@ const Login = () => {
     e.preventDefault();
   };
   const handelUser = () => {
-    const { newItem } = JSON.parse(localStorage.getItem('users'));
-    if (newItem === undefined) {
+    const { newUser} = JSON.parse(localStorage.getItem('users'));
+    if (newUser=== undefined) {
       setMessage('ایمیل یا رمز عبور نامعتبر یا خالی است ');
       setEmail('');
       setPassword('');
       return;
-    } else if (email === newItem.email && password === newItem.password) {
+    } else if (email === newUser.email && password === newUser.password) {
       router.push('/checkOut');
     } 
   };

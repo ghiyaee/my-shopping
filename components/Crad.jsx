@@ -7,7 +7,7 @@ const Crad = () => {
   const router = useRouter();
   const { state, dispatch } = useContext(MyContext);
   const { cart, users } = state;
-  const { newItem } = users;
+  const { newUser } = users;
   const removeHandle = (item) => {
     dispatch({ type: 'ERMOVE_ITEM', payload: item });
   };
@@ -17,7 +17,7 @@ const Crad = () => {
   };
 
   const handelUser = () => {
-    if (newItem.user.length > 0) {
+    if (newUser) {
       router.push('/checkOut');
     } else {
       router.push('/login');

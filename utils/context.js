@@ -24,10 +24,9 @@ const reducer = (state, action) => {
       return { ...state, cart: { ...state.cart, cartItems } };
     }
     case 'ADD_NEW_USERS': {
-      const newItem = action.payload;
-      console.log(newItem);
-      localStorage.setItem('users', JSON.stringify(newItem));
-      return { ...state, users: { ...state.users, newItem } };
+      const newUser = action.payload;
+      localStorage.setItem('users', JSON.stringify(newUser));
+      return { ...state, users: { ...state.users, newUser } };
     }
     default:
       return state;
