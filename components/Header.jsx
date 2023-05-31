@@ -29,7 +29,9 @@ const Header = () => {
           <div className="border bg-zinc-900 h-8 ml-2"></div>
           <Link href={'/login'}>
             {newItem ? (
-              <div className="sm:p-4">کاربر: {newItem.user }</div>
+              <div className="sm:p-4">
+                <span className='text-red-500'>کاربر:</span> {newItem.user}
+              </div>
             ) : (
               <div className="sm:p-4">وارد / ثبت نام</div>
             )}
