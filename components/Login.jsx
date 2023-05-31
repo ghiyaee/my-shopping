@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center  bg-zinc-500 p-10  gap-4 rounded-lg w-[400px]">
       <h3 className="text-2xl text-yellow-300">فرم ورود</h3>
-      <form className="flex flex-col gap-6 w-full" onSubmit={handelSubmit}>
+      <form className="grid grid-cols-1 gap-6 w-full" onSubmit={handelSubmit}>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
