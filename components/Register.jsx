@@ -38,7 +38,7 @@ const Register = () => {
   return (
     <div className="flex flex-col items-center  bg-zinc-500 p-10  gap-4 rounded-lg w-[400px]">
       <h3 className="text-3xl text-yellow-300">فرم ثبت نام</h3>
-      <form className="flex flex-col gap-4 w-full" onSubmit={handelSubmit}>
+      <form className="grid grid-cols-1 gap-4 w-full" onSubmit={handelSubmit}>
         <input
           value={user}
           onChange={(e) => setUser(e.target.value)}
