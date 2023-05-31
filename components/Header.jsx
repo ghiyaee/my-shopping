@@ -5,7 +5,8 @@ import { SlBasket } from 'react-icons/sl';
 
 const Header = () => {
   const { state, dispatch } = useContext(MyContext)
-  const {cart}=state
+  const { cart, users } = state;
+  const { newItem } = users;
     return (
       <header
         className="h-14 w-full shadow-xl 
@@ -27,7 +28,11 @@ const Header = () => {
           </div>
           <div className="border bg-zinc-900 h-8 ml-2"></div>
           <Link href={'/login'}>
-            <div className="sm:p-4">حساب کاربری</div>
+            {newItem ? (
+              <div className="sm:p-4">کاربر: {newItem.user }</div>
+            ) : (
+              <div className="sm:p-4">وارد / ثبت نام</div>
+            )}
           </Link>
         </nav>
       </header>
